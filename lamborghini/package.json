@@ -1,0 +1,14 @@
+{
+    "name": "prot",
+    "version": "1.0.0",
+    "description": "Test Lamborghini pages",
+    "scripts": {
+        "test": "bmw_test/features/*.feature"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "jasmine": "^3.5.0",
+        "logger-helper": "^0.1.2",
+        "protractor": "^5.4.2"
+    }
+}
