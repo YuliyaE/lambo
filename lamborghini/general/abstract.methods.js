@@ -2,15 +2,23 @@ class AbstractElement {
 
     waitAndClick(element) {
         return this.waitUntilClickable(element).then(() => {
-            return element.click();
-        }).catch(message => {
-            Promise.reject(message.message);
+                //console.log(`wait and click ${element.locator()} `)
+                return element.click();
+            }).catch(message => {
+            browser.sleep(1000);
+            element.click();
+            return Promise.reject(message.message);
         })
     }
 
     waitUntilClickable(element) {
-        return browser.wait(protractor.ExpectedConditions.elementToBeClickable(element), 60000);
+        return browser.wait(protractor.ExpectedConditions.elementToBeClickable(element), 160000);
     }
+
+    waitUntilPresent(element) {
+        return browser.wait(protractor.ExpectedConditions.presenceOf(element), 160000);
+    }
+
 
     scroll(element) {
         return this.waitUntilClickable(element).then(() => {

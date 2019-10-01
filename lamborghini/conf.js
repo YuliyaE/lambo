@@ -3,13 +3,15 @@ exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     directConnect: true,
 
-   /* globalTimeout: 3000000,
+    globalTimeout: 3000000,
     pageTimeout: 30000000,
-    allScriptsTimeout: 30000000,*/
+    allScriptsTimeout: 30000000,
 
     specs: [
-        'lambo_tests/test_price.js'
+        'lambo_tests/checkCarIndicators.js'
     ],
+    jasmineNodeOpts: {
+        defaultTimeoutInterval: 120000,
+    }
 
-  
 };
