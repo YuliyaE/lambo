@@ -19,22 +19,21 @@ describe("Check car indicators", function () {
         }).then(() => {
             return UsedCarPage.clickCarMake();
         }).catch(message => {
-            Promise.reject(message);
+            Promise.reject(message.message);
         })
     });
+    
     it("Choose a car", function () {
-        //browser.sleep(500);
         return UsedCarPage.chooseCar().then(() => {
             return UsedCarPage.chooseModel()
         }).then(() => {
-         //   browser.sleep(1000);
             return UsedCarPage.enterModel();
         }).then(() => {
             return UsedCarPage.chooseYear();
         }).then(() => {
             return UsedCarPage.searchCar();
         }).catch(message => {
-            Promise.reject(message);
+            Promise.reject(message.message);
         })
     });
 
@@ -44,11 +43,10 @@ describe("Check car indicators", function () {
         }).then(() => {
             return CarPage.getCarPrice();
         }).then((actualCarPrice) => {
-          //  browser.sleep(1000);
             console.log(actualCarPrice);
             expect(expectedCarPrice).toEqual(actualCarPrice);
         }).catch(message => {
-            Promise.reject(message);
+            Promise.reject(message.message);
         })
     });
 

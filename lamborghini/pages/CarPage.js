@@ -1,4 +1,4 @@
-let AbstractElement = require('../general/abstract.methods.js');
+let Helper = require('../utils/Helper.js');
 
 class CarPage {
     constructor() {
@@ -8,7 +8,7 @@ class CarPage {
     }
 
     chooseCarPerformance() {
-        return AbstractElement.waitAndClick(this.carPerformance);
+        return Helper.waitAndClick(this.carPerformance);
     }
 
     getCarSpeed() {

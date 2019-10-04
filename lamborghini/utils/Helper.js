@@ -1,4 +1,4 @@
-class AbstractElement {
+class Helper {
 
     waitAndClick(element) {
         return this.waitUntilVisible(element).then(() => {
@@ -18,13 +18,9 @@ class AbstractElement {
         return browser.wait(protractor.ExpectedConditions.visibilityOf(element), 60000);
     }
 
-
     scroll(element) {
-        return this.waitUntilClickable(element).then(() => {
             browser.executeScript("arguments[0].scrollIntoView();", element);
-        })
     }
-
 }
 
-module.exports = new AbstractElement();
+module.exports = new Helper();

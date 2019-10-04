@@ -16,7 +16,6 @@ describe("A suite", function () {
             }).then(() => {
                 return MenuPage.chooseCarSection();
             }).then(() => {
-                browser.sleep(3000);
                 return CarListPage.clickArrow();
             }).then(() => {
                 return CarListPage.clickArrow();

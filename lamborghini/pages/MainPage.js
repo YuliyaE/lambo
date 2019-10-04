@@ -1,5 +1,5 @@
 const URL = 'https://www.lamborghiniporrentruy.ch/en';
-let AbstractElement = require('../general/abstract.methods.js');
+let Helper = require('../utils/Helper.js');
 
 class MainPage {
     constructor() {
@@ -13,19 +13,19 @@ class MainPage {
     }
 
     clickMenu() {
-        return AbstractElement.waitAndClick(this.menuButton);
+        return Helper.waitAndClick(this.menuButton);
     }
 
     closeCookieWindow() {
         this.gotInfoButton.isPresent().then(result => {
             if (result == true) {
-                return AbstractElement.waitAndClick(this.gotInfoButton);
+                return Helper.waitAndClick(this.gotInfoButton);
             }
         })
     }
 
     scrollWindow(){
-        return AbstractElement.waitAndClick(this.scrollButton);
+        return Helper.waitAndClick(this.scrollButton);
     }
 
 }

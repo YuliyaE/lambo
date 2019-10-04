@@ -1,4 +1,4 @@
-let AbstractElement = require('../general/abstract.methods.js');
+let Helper = require('../utils/Helper.js');
 
 class UsedCarsPage {
     constructor() {
@@ -15,36 +15,35 @@ class UsedCarsPage {
     }
 
     clickCarMake() {
-        return AbstractElement.waitAndClick(this.carMake);
+        return Helper.waitAndClick(this.carMake);
     }
 
     chooseCar() {
-        return AbstractElement.waitAndClick(this.car);
+        return Helper.waitAndClick(this.car);
     }
 
     chooseModel() {
-        return AbstractElement.waitAndClick(this.carModel);
+        return Helper.waitAndClick(this.carModel);
     }
 
     enterModel() {
-        return AbstractElement.waitAndClick(this.continentalModel);
+        return Helper.waitAndClick(this.continentalModel);
     }
 
     chooseYear() {
-        return AbstractElement.waitAndClick(this.year).then(() => {
-            return AbstractElement.waitAndClick(this.yearTo)
+        return Helper.waitAndClick(this.year).then(() => {
+            return Helper.waitAndClick(this.yearTo)
         }).then(() => {
-            browser.sleep(1000);
-            return AbstractElement.waitAndClick(this.yearNeeded);
+            return Helper.waitAndClick(this.yearNeeded);
         })
     }
 
     searchCar() {
-        return AbstractElement.waitAndClick(this.searchButton);
+        return Helper.waitAndClick(this.searchButton);
     }
 
     clickExploreMore() {
-        return AbstractElement.waitAndClick(this.exploreCar);
+        return Helper.waitAndClick(this.exploreCar);
     }
 
 }

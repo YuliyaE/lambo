@@ -1,4 +1,4 @@
-let AbstractElement = require('../general/abstract.methods.js');
+let Helper = require('../utils/Helper.js');
 
 class MenuPage {
     constructor() {
@@ -8,15 +8,15 @@ class MenuPage {
     }
 
     chooseUsedCars() {
-        return AbstractElement.waitAndClick(this.usedCarsButton);
+        return Helper.waitAndClick(this.usedCarsButton);
     }
 
     chooseMasterpiece() {
-        return AbstractElement.waitAndClick(this.masterpieceButton);
+        return Helper.waitAndClick(this.masterpieceButton);
     }
 
     chooseCarSection(){
-        return AbstractElement.waitAndClick(this.ourCarButton);
+        return Helper.waitAndClick(this.ourCarButton);
     }
 
 }
